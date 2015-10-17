@@ -17,6 +17,7 @@ typedef enum {
 @interface GTScrollNavigationBar : UINavigationBar
 
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UIView *topLevelView;
 @property (assign, nonatomic) GTScrollNavigationBarState scrollState;
 
 - (void)resetToDefaultPositionWithAnimation:(BOOL)animated;

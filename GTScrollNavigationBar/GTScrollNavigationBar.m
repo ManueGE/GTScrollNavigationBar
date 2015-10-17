@@ -212,10 +212,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     
 
     if (self.scrollView) {
-        CGRect parentViewFrame = self.scrollView.superview.frame;
+		UIView *topLevelView = self.topLevelView ?: self.scrollView.superview;
+        CGRect parentViewFrame = topLevelView.frame;
         parentViewFrame.origin.y += offsetY;
         parentViewFrame.size.height -= offsetY;
-        self.scrollView.superview.frame = parentViewFrame;
+        topLevelView.frame = parentViewFrame;
     }
     
     if (animated) {
